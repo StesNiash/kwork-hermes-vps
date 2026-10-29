@@ -1,0 +1,49 @@
+services:
+  hermes:
+    image: nousresearch/hermes-agent:${HERMES_IMAGE_TAG:-latest}
+    container_name: hermes
+    restart: unless-stopped
+    command: ["gateway", "run"]
+    env_file:
+      - .env
+    ports:
+      - "127.0.0.1:8642:8642"
+      - "127.0.0.1:9119:9119"
+    volumes:
+      - ./data:/opt/data
+    healthcheck:
+      test: ["CMD-SHELL", "hermes gateway status >/dev/null 2>&1 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 90s
+    stop_grace_period: 30s
+    mem_limit: 4g
+    cpus: 2.0
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  caddy:
+    image: caddy:2-alpine
+    profiles: ["proxy"]
+    depends_on:
+      hermes:
+        condition: service_healthy
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./data/caddy_data:/data
+      - ./data/caddy_config:/config
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
