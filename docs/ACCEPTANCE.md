@@ -9,6 +9,7 @@
 - [ ] Есть Telegram bot token.
 - [ ] Есть ключ модели.
 - [ ] Для HTTPS: домен указывает на IP VPS.
+- [ ] С VPS открывается `https://api.telegram.org/` (код 200/404, не timeout).
 
 ## 2. После установки
 

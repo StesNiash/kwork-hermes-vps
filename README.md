@@ -22,8 +22,17 @@
 | Диск | 10 GB свободно |
 | Доступ | root или sudo |
 | Внешнее | Telegram bot token, ключ модели (OpenRouter / Anthropic / OpenAI) |
+| Сеть | исходящий HTTPS до `api.telegram.org:443` |
 
 Hermes работает в Docker. Docker и compose plugin не ставятся молча: используйте `--with-docker` или установите заранее.
+
+Перед установкой проверьте Telegram:
+
+```bash
+curl -sS -o /dev/null -w '%{http_code}\n' --max-time 10 https://api.telegram.org/
+```
+
+`200` или `404` — сеть в порядке. `000` — хостинг режет Telegram; нужен VPS вне РФ или разрешённый прокси. На Cloud.ru 29.10.2026 соединение стабильно уходило в timeout.
 
 ## Быстрый старт
 
@@ -125,6 +134,7 @@ Live-проверка на чистом VPS — отдельный обязат�
 - Обновление образа может изменить схему конфигурации; backup делайте до `update.sh`.
 - При `docker compose down -v` данные не удаляются (volume здесь bind-mount), но `--purge` удаляет каталог.
 - Официальный образ не поддерживает `hermes update`; обновление — новый image + recreate.
+- Telegram Bot API может быть недоступен с конкретного хостинга. Это проверяется до установки, а не после.
 
 ## Источники
 

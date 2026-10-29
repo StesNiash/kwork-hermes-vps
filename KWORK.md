@@ -24,6 +24,7 @@
 - SSH-доступ к VPS (root или sudo);
 - Telegram bot token от @BotFather;
 - API-ключ модели (OpenRouter / Anthropic / OpenAI / другой провайдер);
+- VPS с исходящим доступом к `api.telegram.org:443` (иначе нужен зарубежный сервер или разрешённый прокси);
 - домен — только если нужен HTTPS-dashboard.
 
 **Допы:**
