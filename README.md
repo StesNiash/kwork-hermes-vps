@@ -28,7 +28,7 @@ Hermes работает в Docker. Docker и compose plugin не ставятс�
 ## Быстрый старт
 
 ```bash
-git clone <this-repo> kwork-hermes-vps
+git clone https://github.com/StesNiash/kwork-hermes-vps.git
 cd kwork-hermes-vps
 sudo bash install.sh --with-docker
 ```
