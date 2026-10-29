@@ -102,6 +102,10 @@ sudo docker compose --profile proxy up -d
 Caddy получит сертификат и проксирует dashboard на `hermes:9119`.
 Dashboard всё равно требует basic auth: без `HERMES_DASHBOARD_BASIC_AUTH_PASSWORD` он не поднимется на внешнем интерфейсе.
 
+## AWS
+
+Пошаговая инструкция для тестового EC2/Lightsail: [docs/AWS.md](docs/AWS.md).
+
 ## Обслуживание
 
 ```bash
