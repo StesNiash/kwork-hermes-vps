@@ -136,6 +136,12 @@ fi
 if [ -z "$(get_env API_SERVER_KEY)" ]; then
   set_env API_SERVER_KEY "$(openssl rand -hex 32)"
 fi
+if [ -z "$(get_env HERMES_CPUS)" ]; then
+  set_env HERMES_CPUS "$(nproc)"
+fi
+if [ -z "$(get_env HERMES_MEM_LIMIT)" ]; then
+  set_env HERMES_MEM_LIMIT "4g"
+fi
 
 log "Validating compose file"
 docker compose config --quiet
