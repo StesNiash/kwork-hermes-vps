@@ -55,3 +55,19 @@
 - Работу с любым провайдером без проверки.
 - Сохранность данных без backup.
 - Поддержку 24/7 в базовой цене.
+
+## Обложка (не копировать в карточку)
+
+> Это промпт для генератора изображений, а не текст объявления. В Kwork его публиковать не нужно.
+
+**Промпт для ChatGPT / Gemini:**
+
+> 4:3 cover illustration for a freelance service that installs a personal AI agent on a client's VPS. On the left, a clean compact server box with a subtle SSH terminal; on the right, a minimal browser dashboard and a Telegram-style chat bubble connected by a secure glowing line. In the center, an abstract friendly AI assistant orb, not a human face. Deep navy background, teal and warm amber accents, soft rim light, subtle grid, professional editorial tech style, high contrast, generous negative space, centered composition that survives a square crop, no text, no letters, no logos, no watermarks, no real person, crisp 3D-isometric mixed with clean vector.
+
+**Коротко по-русски:** сервер + защищённая линия + дашборд/Telegram + абстрактный AI-ассистент; тёмно-синий, бирюза и янтарь; без текста и логотипов.
+
+**Параметры:** 1200×900, 4:3; главный объект по центру, важные детали не у краёв.
+
+**Негатив:** text, typography, letters, logo, brand mark, watermark, signature, real face, clutter, busy background, low contrast, distorted hands.
+
+**Если нужен исходник:** не берите чужие скриншоты и логотип Hermes. Для реального кадра снимите свой dashboard после установки, без токенов, чатов и персональных данных; либо используйте нейтральную схему «VPS → Hermes → Telegram». Логотип и товарные знаки — только с разрешения правообладателя.
